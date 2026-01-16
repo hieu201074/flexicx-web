@@ -1,1 +1,68 @@
-j
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FlexicX Support</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+body{margin:0;background:#0b0d14;color:#fff;font-family:Arial}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px}
+a{color:#ccc;text-decoration:none;margin-left:20px}
+a:hover{color:#ff2f6d}
+.btn{background:#ff2f6d;padding:8px 14px;border-radius:8px;color:#fff}
+.team{display:flex;gap:20px;justify-content:center;margin-top:40px}
+.card{background:#12152a;padding:20px;border-radius:14px;transition:.3s}
+.card:hover{transform:translateY(-6px);box-shadow:0 0 20px #ff2f6d}
+</style>
+</head>
+
+<body>
+
+<header>
+  <b>FlexicX Support</b>
+  <nav>
+    <a href="https://discord.gg/YOUR_INVITE" target="_blank">Support</a>
+    <a href="/login" class="btn">Login with Discord</a>
+  </nav>
+</header>
+
+<section style="text-align:center">
+  <h1>Server FlexicX In Action</h1>
+  <p id="user"></p>
+  <a id="inviteBot" class="btn" target="_blank">Invite Bot</a>
+</section>
+
+<section class="team">
+  <div class="card">
+    <img src="https://cdn.discordapp.com/avatars/ID/HASH.png" width="80">
+    <p>Developer</p>
+  </div>
+  <div class="card">
+    <img src="https://cdn.discordapp.com/avatars/ID/HASH.png" width="80">
+    <p>Support</p>
+  </div>
+  <div class="card">
+    <img src="https://cdn.discordapp.com/avatars/ID/HASH.png" width="80">
+    <p>Admin</p>
+  </div>
+</section>
+
+<script>
+fetch("/api/me")
+.then(r=>r.json())
+.then(u=>{
+  if(u.username){
+    document.getElementById("user").innerText =
+      `Logged in as ${u.username}#${u.discriminator}`;
+  }
+});
+
+fetch("/api/invite")
+.then(r=>r.json())
+.then(d=>{
+  document.getElementById("inviteBot").href = d.invite;
+});
+</script>
+
+</body>
+</html>
