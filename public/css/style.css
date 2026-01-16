@@ -1,0 +1,29 @@
+body{
+  background:#05050b;
+  color:white;
+  font-family:Arial;
+}
+.team{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,260px);
+  gap:30px;
+  justify-content:center;
+}
+.card{
+  background:linear-gradient(145deg,#0f0f1f,#1c1c35);
+  padding:30px;
+  border-radius:18px;
+  text-align:center;
+  transition:.35s;
+}
+.card:hover{
+  transform:translateY(-12px);
+  box-shadow:0 0 40px rgba(255,0,150,.4);
+}
+.card img{
+  width:96px;
+  border-radius:50%;
+}
+.owner img{border:3px solid #ff2f92}
+.admin img{border:3px solid #ffcc00}
+.developer img{border:3px solid #00eaff}
