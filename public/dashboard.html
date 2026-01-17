@@ -5,17 +5,18 @@
   <title>Dashboard | FlexicX</title>
   <link rel="stylesheet" href="/css/style.css">
 </head>
-
 <body>
 
-<!-- NAV -->
+<!-- NAVBAR -->
 <nav class="nav">
   <div class="logo">FlexicX</div>
-  <div class="menu-btn" id="menuBtn">☰</div>
+
+  <!-- NÚT 3 GẠCH -->
+  <div id="menuBtn" class="menu-btn">☰</div>
 </nav>
 
 <!-- MENU ẨN -->
-<div class="side-menu" id="sideMenu">
+<div id="sideMenu" class="side-menu">
   <a href="/api/invite">Invite Bot</a>
   <a href="/create-bot">Create Bot</a>
   <a href="/commands">Command Bot</a>
@@ -25,31 +26,20 @@
 <section class="dashboard">
   <h1>FlexicX Discord Bot</h1>
   <p class="desc">
-    FlexicX is a high-performance Discord bot designed for
-    moderation, automation, security and server management.
+    FlexicX is a high-performance Discord bot for moderation,
+    automation, security and server protection.
   </p>
 
   <div class="features">
     <div class="feature">⚡ Ultra Fast Nuke</div>
     <div class="feature">🛡️ Anti Crash</div>
-    <div class="feature">🎛️ Advanced Dashboard</div>
+    <div class="feature">🤖 Advanced Dashboard</div>
     <div class="feature">📜 Custom Commands</div>
     <div class="feature">🔒 Secure & Stable</div>
   </div>
 </section>
 
+<!-- JS RIÊNG -->
 <script src="/js/dashboard.js"></script>
-const menuBtn = document.getElementById("menuBtn");
-const sideMenu = document.getElementById("sideMenu");
-
-menuBtn.onclick = () => {
-  sideMenu.classList.toggle("show");
-};
-
-document.addEventListener("click", (e) => {
-  if (!sideMenu.contains(e.target) && e.target !== menuBtn) {
-    sideMenu.classList.remove("show");
-  }
-});
 </body>
 </html>
