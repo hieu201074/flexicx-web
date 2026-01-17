@@ -83,14 +83,13 @@ body {
 
 .buttons {
   margin-top: 30px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-
-.btn {
-  padding: 14px 26px;
-  border-radius: 10px;
-  text-decoration: none;
-  margin: 0 10px;
-  font-weight: 600;
+.buttons .btn {
+  min-width: 180px;
 }
 
 .primary {
@@ -193,18 +192,22 @@ body {
 .team-card.support span { color: #34d399; }
 
 /* MOBILE */
-@media (max-width: 600px) {
-  .team-title {
-    font-size: 32px;
+@media (max-width: 768px) {
+  .nav {
+    padding: 0 20px;
+  }
+
+  .nav-right a {
+    margin-left: 14px;
+    font-size: 14px;
   }
 }
-.buttons {
-  margin-top: 30px;
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.buttons .btn {
-  min-width: 180px;
+@media (max-width: 768px) {
+  .animate-text {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
 }
