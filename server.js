@@ -24,10 +24,23 @@ const {
 app.get("/login", (req, res) => {
   const url =
     `https://discord.com/oauth2/authorize` +
-    `?client_id=${CLIENT_ID}` +
-    `&redirect_uri=${encodeURIComponent(REDIRECT_URI)}` +
+    `?client_id=${process.env.CLIENT_ID}` +
+    `&redirect_uri=${encodeURIComponent(process.env.REDIRECT_URI)}` +
     `&response_type=code` +
     `&scope=identify`;
+
+  res.redirect(url);
+});
+
+app.get("/callback", async (req, res) => {
+  // xử lý OAuth2 ở đây (bạn đã có)
+  res.redirect("/dashboard");
+});
+
+app.get("/dashboard", (req, res) => {
+  if (!req.session.user) return res.redirect("/");
+  res.sendFile(__dirname + "/public/dashboard.html");
+});
 
   res.redirect(url);
 });
