@@ -1,29 +1,52 @@
-body{
-  background:#05050b;
-  color:white;
-  font-family:Arial;
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #0b1020, #000);
+  color: white;
+  font-family: system-ui, -apple-system;
 }
-.team{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,260px);
-  gap:30px;
-  justify-content:center;
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 24px;
 }
-.card{
-  background:linear-gradient(145deg,#0f0f1f,#1c1c35);
-  padding:30px;
-  border-radius:18px;
-  text-align:center;
-  transition:.35s;
+
+.nav a {
+  color: #aaa;
+  margin-left: 16px;
+  text-decoration: none;
 }
-.card:hover{
-  transform:translateY(-12px);
-  box-shadow:0 0 40px rgba(255,0,150,.4);
+
+.hero {
+  height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
-.card img{
-  width:96px;
-  border-radius:50%;
+
+.hero h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
 }
-.owner img{border:3px solid #ff2f92}
-.admin img{border:3px solid #ffcc00}
-.developer img{border:3px solid #00eaff}
+
+.hero p {
+  opacity: 0.7;
+}
+
+.btn {
+  background: linear-gradient(135deg, #ff4d88, #ff0066);
+  padding: 12px 22px;
+  border-radius: 12px;
+  color: white;
+  text-decoration: none;
+  margin: 8px;
+  display: inline-block;
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid #444;
+}
