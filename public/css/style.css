@@ -53,12 +53,13 @@ body {
 
 /* HERO */
 .hero {
-  height: calc(100vh - 70px);
+  min-height: calc(100svh - 70px); /* FIX iOS */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 0 20px;
 }
 
 .animate-text {
