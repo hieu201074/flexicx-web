@@ -95,7 +95,7 @@ app.get("/api/invite", (req, res) => {
 /* DASHBOARD */
 app.get("/dashboard", (req, res) => {
   if (!req.session.user) return res.redirect("/");
-  res.sendFile(__dirname + "/public/index.html");
+  res.sendFile(__dirname + "/public/dashboard.html");
 });
 /* TEAM PAGE */
 app.get("/team", (req, res) => {
