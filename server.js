@@ -1,6 +1,7 @@
 const express = require("express");
 const fetch = require("node-fetch");
 const session = require("express-session");
+const path = require("path");
 require("dotenv").config();
 
 const app = express();
@@ -83,7 +84,22 @@ app.get("/dashboard", (req, res) => {
   if (!req.session.user) return res.redirect("/");
   res.sendFile(__dirname + "/public/index.html");
 });
+/* TEAM PAGE */
+app.get("/team", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/team.html"));
+});
 
+/* INVITE BOT (URL ĐẸP) */
+app.get("/invite", (req, res) => {
+  const PERMISSIONS = "8";
+  const invite =
+    `https://discord.com/oauth2/authorize` +
+    `?client_id=${process.env.BOT_ID}` +
+    `&permissions=${PERMISSIONS}` +
+    `&scope=bot%20applications.commands`;
+
+  res.redirect(invite);
+});
 app.listen(process.env.PORT || 3000, () => {
   console.log("Server running");
 });
