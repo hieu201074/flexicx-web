@@ -102,15 +102,6 @@ app.get("/team", (req, res) => {
   res.sendFile(path.join(__dirname, "public/team.html"));
 });
 
-/* INVITE BOT (URL ĐẸP) */
-app.get("/invite", (req, res) => {
-  const PERMISSIONS = "8";
-  const invite =
-    `https://discord.com/oauth2/authorize` +
-    `?client_id=${process.env.BOT_ID}` +
-    `&permissions=${PERMISSIONS}` +
-    `&scope=bot%20applications.commands`;
-
   res.redirect(invite);
 });
 app.get("/", (req, res) => {
