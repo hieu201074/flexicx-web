@@ -1,0 +1,21 @@
+.side-menu {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: #111;
+  padding: 12px;
+  border-radius: 10px;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.side-menu.show {
+  display: flex;
+}
+
+.menu-btn {
+  font-size: 26px;
+  cursor: pointer;
+  user-select: none;
+}
