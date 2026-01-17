@@ -29,6 +29,7 @@
     <div class="buttons">
       <a href="/login" class="btn primary">Login Discord</a>
       <a href="/api/invite" class="btn outline">Create Bot</a>
+      <button id="inviteBtn" class="btn outline">Invite Bot</button>
     </div>
   </section>
 
@@ -39,5 +40,14 @@
 
   <!-- JS -->
   <script src="/js/main.js"></script>
+  <script>
+document.getElementById("inviteBtn").onclick = async () => {
+  const res = await fetch("/api/invite");
+  const data = await res.json();
+  if (data.invite) {
+    window.location.href = data.invite;
+  }
+};
+</script>
 </body>
 </html>
