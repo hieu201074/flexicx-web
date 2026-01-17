@@ -39,5 +39,17 @@
 </section>
 
 <script src="/js/dashboard.js"></script>
+const menuBtn = document.getElementById("menuBtn");
+const sideMenu = document.getElementById("sideMenu");
+
+menuBtn.onclick = () => {
+  sideMenu.classList.toggle("show");
+};
+
+document.addEventListener("click", (e) => {
+  if (!sideMenu.contains(e.target) && e.target !== menuBtn) {
+    sideMenu.classList.remove("show");
+  }
+});
 </body>
 </html>
