@@ -50,3 +50,59 @@ body {
   background: transparent;
   border: 1px solid #444;
 }
+.center {
+  text-align: center;
+  margin: 40px 0;
+  font-size: 32px;
+}
+
+.team-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+.team-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  transition: 0.3s;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.team-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.team-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 0 30px rgba(88,101,242,0.4);
+}
+
+.team-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.team-card h3 {
+  margin: 12px 0 4px;
+}
+
+.team-card span {
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+/* ROLE_toggle */
+.founder span { background: gold; color: black; }
+.dev span { background: #5865F2; }
+.support span { background: #2ecc71; }
