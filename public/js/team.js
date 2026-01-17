@@ -1,11 +1,9 @@
-const cards = document.querySelectorAll(".team-card");
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".team-card");
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
+  cards.forEach((card, index) => {
+    setTimeout(() => {
+      card.classList.add("show");
+    }, index * 200); // mỗi card cách nhau 200ms
   });
-}, { threshold: 0.3 });
-
-cards.forEach(card => observer.observe(card));
+});
