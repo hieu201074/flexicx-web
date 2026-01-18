@@ -1,57 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>FlexicX</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- CSS -->
   <link rel="stylesheet" href="/css/style.css">
+
+  <!-- JS -->
+  <script defer src="/js/style.js"></script>
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="nav">
-    <div class="logo">FlexicX</div>
+<!-- NAVBAR -->
+<nav class="nav">
+  <div class="logo">FlexicX</div>
 
-    <div class="nav-right">
-      <a href="/">Home</a>
-      <a href="/team">Team</a>
-      <a href="https://discord.gg/Bu5drxXQw" target="_blank">Support</a>
-    </div>
-  </nav>
+  <div class="nav-right">
+    <a href="/team">Team</a>
+    <a href="https://discord.gg/Bu5drxXQw" target="_blank">Support</a>
+    <a href="/login" class="btn outline">Login Discord</a>
+  </div>
+</nav>
 
-  <!-- HERO -->
-  <section class="hero">
-  <video autoplay muted loop class="bg-video">
-    <source src="/video/intro.mp4" type="video/mp4">
-  </video>
+<!-- HERO -->
+<section class="hero">
+  <h1 class="animate-text">FlexicX Bot</h1>
+  <p class="subtitle">
+    Nuke Bot • Fast • Dev By Minh Hiếu
+  </p>
 
-  <div class="hero-content">
-    <h1 class="animate-text">FlexicX Bot</h1>
-    <p>Powerful • Fast • Secure Discord Bot</p>
-
-    <div class="buttons">
-      <a href="/login" class="btn">Login Discord</a>
-    </div>
+  <!-- BUTTONS -->
+  <div class="buttons">
+    <a href="/login" class="btn primary">Login Discord</a>
+    <a href="/team" class="btn outline">Our Team</a>
+    <a href="https://discord.gg/yourserver" target="_blank" class="btn outline">
+      Support
+    </a>
   </div>
 </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    © 2026 FlexicX • All rights reserved
-  </footer>
+<!-- INTRO / VIDEO -->
+<section class="intro">
+  <video autoplay muted loop playsinline>
+    <source src="/video/demo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</section>
 
-  <!-- JS -->
-  <script src="/js/main.js"></script>
-  <script>
-document.getElementById("inviteBtn").onclick = async () => {
-  const res = await fetch("/api/invite");
-  const data = await res.json();
-  if (data.invite) {
-    window.location.href = data.invite;
-  }
-};
-</script>
+<!-- FOOTER -->
+<footer class="footer">
+  © 2026 FlexicX • All rights reserved
+</footer>
+
 </body>
 </html>
