@@ -1,21 +1,44 @@
-.side-menu {
-  position: absolute;
-  top: 60px;
-  right: 20px;
-  background: #111;
-  padding: 12px;
-  border-radius: 10px;
-  display: none;
-  flex-direction: column;
-  gap: 10px;
+body {
+  background: #05070f;
+  color: white;
+  font-family: Segoe UI, sans-serif;
 }
 
-.side-menu.show {
+.dash-nav {
+  height: 70px;
+  padding: 0 30px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .menu-btn {
   font-size: 26px;
   cursor: pointer;
-  user-select: none;
+}
+
+.side-menu {
+  position: fixed;
+  top: 70px;
+  right: -220px;
+  width: 220px;
+  height: 100%;
+  background: #14182a;
+  padding: 20px;
+  transition: .3s;
+}
+
+.side-menu.show {
+  right: 0;
+}
+
+.side-menu a {
+  display: block;
+  margin-bottom: 15px;
+  color: #6ea8ff;
+  text-decoration: none;
+}
+
+.dash-main {
+  padding: 80px 40px;
 }
