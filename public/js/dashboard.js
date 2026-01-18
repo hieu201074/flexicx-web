@@ -1,20 +1,12 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const menuBtn = document.getElementById("menuBtn");
-  const sideMenu = document.getElementById("sideMenu");
+const menuBtn = document.getElementById("menuBtn");
+const sideMenu = document.getElementById("sideMenu");
 
-  if (!menuBtn || !sideMenu) {
-    console.error("Không tìm thấy menuBtn hoặc sideMenu");
-    return;
-  }
+menuBtn.onclick = () => {
+  sideMenu.classList.toggle("show");
+};
 
-  menuBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    sideMenu.classList.toggle("show");
-  });
-
-  document.addEventListener("click", (e) => {
-    if (!sideMenu.contains(e.target)) {
-      sideMenu.classList.remove("show");
-    }
-  });
-});
+document.getElementById("inviteBot").onclick = async () => {
+  const res = await fetch("/api/invite");
+  const data = await res.json();
+  window.open(data.invite, "_blank");
+};
