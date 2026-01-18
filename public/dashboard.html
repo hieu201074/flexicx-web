@@ -3,43 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <title>Dashboard | FlexicX</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/dashboard.css">
+  <script defer src="/js/dashboard.js"></script>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="nav">
+<nav class="dash-nav">
   <div class="logo">FlexicX</div>
-
-  <!-- NÚT 3 GẠCH -->
-  <div id="menuBtn" class="menu-btn">☰</div>
+  <div class="menu-btn" id="menuBtn">☰</div>
 </nav>
 
-<!-- MENU ẨN -->
-<div id="sideMenu" class="side-menu">
-  <a href="/api/invite">Invite Bot</a>
-  <a href="/create-bot">Create Bot</a>
-  <a href="/commands">Command Bot</a>
+<div class="side-menu" id="sideMenu">
+  <a href="#" id="inviteBot">Invite Bot</a>
+  <a href="#">Create Bot</a>
+  <a href="#">Commands</a>
 </div>
 
-<!-- NỘI DUNG GIỮA -->
-<section class="dashboard">
-  <h1>FlexicX Discord Bot</h1>
-  <p class="desc">
-    FlexicX is a high-performance Discord bot for moderation,
-    automation, security and server protection.
-  </p>
+<main class="dash-main">
+  <h1>FlexicX Dashboard</h1>
+  <p>Manage your bot, servers and commands here.</p>
+</main>
 
-  <div class="features">
-    <div class="feature">⚡ Ultra Fast Nuke</div>
-    <div class="feature">🛡️ Anti Crash</div>
-    <div class="feature">🤖 Advanced Dashboard</div>
-    <div class="feature">📜 Custom Commands</div>
-    <div class="feature">🔒 Secure & Stable</div>
-  </div>
-</section>
-
-<!-- JS RIÊNG -->
-<script src="/js/dashboard.js"></script>
 </body>
 </html>
